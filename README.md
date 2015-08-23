@@ -40,5 +40,5 @@ Default ```$TMPDIR``` which is set to /tmp can be quickly filled up depending on
 Certain modules set environment variables. ```module help module_name``` gives an overview of the environment variables set when loading the module.
  
  
- ### How to monitor peak memory of a job
+### How to monitor peak memory of a job
 + ```acct --parsable --long``` check for MaxRSS 
