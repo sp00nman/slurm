@@ -5,8 +5,8 @@
 ### WARNING: NONE OF THE COMMANDS HAVE BEEN TESTED YET AND MAY CAUSE SERIOUS HARM TO YOUR SYSTEM, USE WITH CARE. #
 ###############################################################################################################
 
-* Usage of ENVIRONMENT VARIABLES
-* 
+* Usage of ENVIRONMENT VARIABLES in the context of job sumissions
+* How to monitor peak memory of a job?
 
 
 ### Usage of ENVIRONMENT VARIABLES
@@ -22,14 +22,23 @@ echo $NGS_GATK
 
 Permanetly add environment variables to your shell:
 
- ```
- echo "export NGS_GATK=\"/path/to/gatk/executables \" " >>~/.bashrc
- ```
- Usefull environment variables:
+```
+echo "export NGS_GATK=\"/path/to/gatk/executables \" " >>~/.bashrc
+```
+Usefull environment variables:
  
- ```
- echo TMPDIR
- echo PWD
- echo HOME
- ```
+```
+echo $PATH
+echo $TMPDIR
+echo $PWD
+echo $HOME
+echo $USER
+```
  
+Default ```$TMPDIR``` which is set to /tmp can be quickly filled up depending on size; it's recommended to set TMPDIR to eg. /scratch/users/$USER/tmp
+
+Certain modules set environment variables. ```module help module_name``` gives an overview of the environment variables set when loading the module.
+ 
+ 
+ ### How to monitor peak memory of a job
++ ```acct --parsable --long``` check for MaxRSS 
