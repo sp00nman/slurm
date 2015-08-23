@@ -7,6 +7,7 @@
 
 * Usage of ENVIRONMENT VARIABLES in the context of job sumissions
 * How to monitor peak memory of a job?
+* Useful JAVA related settings
 
 
 ### Usage of ENVIRONMENT VARIABLES
@@ -42,3 +43,8 @@ Certain modules set environment variables. ```module help module_name``` gives a
  
 ### How to monitor peak memory of a job
 + ```acct --parsable --long``` check for MaxRSS 
+
+
+### Useful JAVA related settings
++ ``` -Djava.io.tmpdir=$TMPDIR``` set temoorary directory 
++ ``` -Xmx10g ``` increase Java heap memory
